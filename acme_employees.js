@@ -91,3 +91,64 @@ function findManagementChainForEmployee(nameObj, list) {
 	}
 	return resultArr;
 }
+
+spacer('generateManagementTree');
+//given a list of employees, generate a tree like structure for the employees, starting with the employee who has no manager. Each employee will have a reports property which is an array of the employees who report directly to them.
+console.log(JSON.stringify(generateManagementTree(employees), null, 2));
+/*
+{
+  "id": 1,
+  "name": "moe",
+  "reports": [
+    {
+      "id": 2,
+      "name": "larry",
+      "managerId": 1,
+      "reports": [
+        {
+          "id": 4,
+          "name": "shep",
+          "managerId": 2,
+          "reports": [
+            {
+              "id": 8,
+              "name": "shep Jr.",
+              "managerId": 4,
+              "reports": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "curly",
+      "managerId": 1,
+      "reports": [
+        {
+          "id": 5,
+          "name": "groucho",
+          "managerId": 3,
+          "reports": [
+            {
+              "id": 6,
+              "name": "harpo",
+              "managerId": 5,
+              "reports": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "name": "lucy",
+      "managerId": 1,
+      "reports": []
+    }
+  ]
+}
+*/
+spacer('');
+
+function generateManagementTree(list) {}
